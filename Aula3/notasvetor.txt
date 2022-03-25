@@ -1,0 +1,153 @@
+Escreva um algoritmo que leia uma lista de salários de cinco funcionários em um vetor.
+ Após, o algoritmo deverá aplicar um aumento de 10% somente sobre salários abaixo de R$ 2000,00.  
+Mostrar na tela a lista dos salários.
+
+-------------------------------------------
+
+Elabore um algoritmo que leia em um vetor:
+- um vetor com os nomes de seis ou 3 times.
+- outro vetor com a pontuação dosou 3 seis times.
+
+Exibir ao final o nome do time campeão e o último colocado na pontuação.
+
+
+programa
+{
+
+    funcao inicio()
+    {
+        cadeia time[3], campeao="", ultimoColocado=""
+        real pontuacao[3], maiorPontuacao=0.0, menorPontuacao=1000.0
+
+        para(inteiro i=0; i <=2; i++){
+            escreva("O nome do time:")
+            leia(time[i])
+
+            escreva("Pontuação:")
+            leia(pontuacao[i])
+
+            se(pontuacao[i] > maiorPontuacao){
+                maiorPontuacao = pontuacao[i]
+                campeao = time[i]
+            }
+
+            se(pontuacao[i] < menorPontuacao){
+                menorPontuacao = pontuacao[i]
+                ultimoColocado = time[i]
+            }
+        }
+        escreva("Campeão:",campeao, " Maior Pontuação:", maiorPontuacao,"\n")
+        escreva("Ultimo:",ultimoColocado, " Menor Pontuação:", menorPontuacao,"\n")
+    }
+}
+
+
+
+---------------
+
+Roni 2 para
+programa
+{
+
+    funcao inicio()
+    {
+        real notas[4], maiorNota=0.0, somaNotas=0.0, menorNota=10.0
+
+        para(inteiro i=0; i <=3; i++){
+            escreva("Digite a nota:")
+            leia(notas[i])
+            somaNotas =  somaNotas + notas[i]
+        }
+
+        para(inteiro i=0; i <=3; i++){
+            se(i==0){
+              maiorNota =  notas[i]
+              menorNota =  notas[i]
+            }senao
+                se(maiorNota > notas[i] ){
+                    maiorNota = notas[i]
+                }
+
+                se(menorNota < notas[i]){
+                     menorNota =  notas[i]
+                }
+
+        }
+           escreva("Média:", somaNotas/4)
+           escreva("A Maior Nota:", maiorNota)
+           escreva("A Pior Nota:", menorNota)
+    }
+
+
+
+Breno
+programa
+{
+
+    funcao inicio()
+    {
+        real notas[4],menor=0.0,maior=0.0,soma=0.0
+
+        para(inteiro i = 0; i<4;
+i++){
+
+            escreva("Digite sua nota:")
+            leia(notas[i])
+
+            soma = soma + notas[i]
+
+            se(i == 0){
+                maior = notas[i]
+                menor = notas[i]
+            }senao
+                se(notas[i] < 0 ou notas[i] > 10){
+                    escreva("Nota Inválida")
+                }senao
+                    se(notas[i] > maior){
+                        maior = notas[i]
+                    }senao
+                        se(notas[i] < menor){
+                        menor = notas[i]
+                        }
+        }
+        limpa()
+        escreva("Maior Nota:", maior, "\nMenor Nota:", menor, "\nMédia:", soma/4)
+
+    }
+}
+
+Beatriz
+{
+    inclua biblioteca Matematica
+ --> mat
+    funcao inicio()
+    {
+        /* Criar um algortimo para leitura de quatro notas em um vetor. 
+        Calcular a média, exibir a maior nota, a menor nota*/
+
+        real nota[4], maior=0.0, menor=0.0, soma=0.0
+
+        para(inteiro i=0; i < 4; i++){
+            escreva("Digite a nota: ")
+            leia(nota[i])
+            enquanto (nota[i] < 0 ou nota[i] > 10){
+                escreva("Nota inválida, digite novamente: ")
+                leia(nota[i])
+            }
+            soma += nota[i]
+            se(i==0){
+                maior = nota[i]
+                menor = nota[i]
+            }
+            se(nota[i] > maior){
+                maior = nota[i]
+            }
+            se(nota[i] < menor){
+                menor = nota[i]
+            }
+        }
+        limpa()
+        escreva("A média das notas é: ", mat.arredondar(soma/4,2), "\nA maior nota é: ", mat.arredondar(maior,2), "\nA menor nota é: ", mat.arredondar(menor,2))
+    }
+}
+}

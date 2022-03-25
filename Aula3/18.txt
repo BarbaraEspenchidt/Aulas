@@ -1,0 +1,22 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro quantidade, idade, totalMaior18=0, totalMenor18=0
+		escreva("Digite a quantidade de pessoas:")
+		leia(quantidade)
+
+		para(inteiro i=0; i < quantidade; i++){
+		  escreva("Digite a idade:")
+		  leia(idade)
+		  se(idade >= 18){
+		  	totalMaior18 = totalMaior18 + 1
+		  }senao{
+		  	totalMenor18 = totalMenor18 + 1
+		  }
+		}
+		escreva("Total de Maior:", totalMaior18)
+		escreva("\nTotal de Menor:", totalMenor18)
+	}
+}

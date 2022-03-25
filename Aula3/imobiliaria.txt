@@ -1,0 +1,45 @@
+Fazer um programa para cálculo de valores de compra de imóveis de uma corretora
+Entrar com valor do imóvel
+Nome do Comprador
+Nome do Vendedor
+Calcular 
+O comprador paga além do valor do imóvel as seguintes taxas:
+Laudêmio - 2.5%
+ITBI - 3.5%
+
+Vendedor 
+O vendedor paga 5% de comissão para a corretora de imóveis
+
+No final deverão ser exibidos as seguintes informações:
+Total Geral Gasto pelo comprador (Valor do Imóvel + Taxas(ITBI e Laudêmio)
+Valor a receber pelo comprador(Valor do imóvel menos a comissão)
+O programa deverá ser encerrado quando o usuário responder ('S' ou 's') para sair
+
+
+programa {
+    funcao inicio() {
+        real valorImovel, compradorPaga, vendedorRecebe
+        cadeia nomeComprador, nomeVendedor
+        caracter continuar='s'
+
+        enquanto(continuar == 's' ou continuar == 'S') {
+            escreva("Digite o valor do imovel: ")
+            leia(valorImovel)
+
+            escreva("Digite o nome do comprador: ")
+            leia(nomeComprador)
+
+            escreva("Digite o nome do vendedor: ")
+            leia(nomeVendedor)
+
+            compradorPaga = valorImovel + 0.025valorImovel + 0.035valorImovel
+            vendedorRecebe = valorImovel*0.95
+
+            escreva("O total gasto pelo comprador é de R$", compradorPaga)
+            escreva("O vendedor recebe R$", vendedorRecebe)
+
+            escreva("\nDeseja continuar(S/n)? ")
+            leia(continuar)
+        }
+    }
+}
